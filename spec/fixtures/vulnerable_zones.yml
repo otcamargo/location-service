@@ -1,0 +1,7 @@
+vulnerable_zone1:
+  id: 1
+  cep: 01311-922
+  logradouro: Avenida Paulista 1195
+  bairro: Bela Vista
+  localidade: São Paulo
+  uf: SP
