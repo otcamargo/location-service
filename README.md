@@ -1,24 +1,34 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Project's setup
 
-Things you may want to cover:
+Before anything, make sure you have `rails 6`, `ruby 2.6.2` and sqlite3 installed.
 
-* Ruby version
+To setup just run the following in the terminal:
 
-* System dependencies
+```
+bundle install
+```
 
-* Configuration
+This will install all the dependencies. Then we need to setup the development DB, run this in the terminal:
 
-* Database creation
+```
+rails db:setup
+```
 
-* Database initialization
+We're using `rspec` to test this application, to run the tests use:
 
-* How to run the test suite
+```
+rspec
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+On the first run, it will create your test DB.
 
-* Deployment instructions
 
-* ...
+### DB structure
+
+This project's db has one table only called `vulnerable_zones`. This table is where we store data related to vulnerable zones (floods and other natural disasters).
+
+The idea here is that we only store information about the vulnerable places in a way that we can retrieve it with ease. This is our schema
+
+![Alt text](/docs/images/db-schema.png?raw=true "Title")
