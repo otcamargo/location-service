@@ -21,4 +21,25 @@ class VulnerableZonesController < ApplicationController
 
     render json: response
   end
+
+  def destroy
+    zip_code = format_zip_code(params[:cep])
+    if @vulnerable_zone = VulnerableZone.find_by!(cep: zip_code)
+      raise :error
+      @vulnerable_zone.destroy!
+      render head: :ok
+    end
+    rescue
+      head :unprocessable_entity unless head :not_found
+  end
+
+  private
+
+  def format_zip_code(zip_code)
+    if zip_code.length == 8
+      return zip_code.insert(5, "-")
+    else
+      puts "Invalid"
+    end
+  end
 end
