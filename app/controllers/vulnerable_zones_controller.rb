@@ -24,13 +24,11 @@ class VulnerableZonesController < ApplicationController
 
   def destroy
     zip_code = format_zip_code(params[:cep])
-    if @vulnerable_zone = VulnerableZone.find_by!(cep: zip_code)
-      raise :error
-      @vulnerable_zone.destroy!
-      render head: :ok
-    end
-    rescue
-      head :unprocessable_entity unless head :not_found
+  
+    @vulnerable_zone = VulnerableZone.find_by!(cep: zip_code)
+    @vulnerable_zone.destroy!
+
+    render head: :ok
   end
 
   private
