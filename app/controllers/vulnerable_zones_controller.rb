@@ -24,7 +24,7 @@ class VulnerableZonesController < ApplicationController
 
   def destroy
     zip_code = format_zip_code(params[:cep])
-  
+
     @vulnerable_zone = VulnerableZone.find_by!(cep: zip_code)
     @vulnerable_zone.destroy!
 
@@ -37,7 +37,7 @@ class VulnerableZonesController < ApplicationController
     if zip_code.length == 8
       return zip_code.insert(5, "-")
     else
-      puts "Invalid"
+      return zip_code
     end
   end
 end
