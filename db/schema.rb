@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_15_212039) do
+ActiveRecord::Schema.define(version: 2020_04_28_043802) do
+
+  create_table "people", force: :cascade do |t|
+    t.string "nome"
+    t.string "email"
+    t.string "cep"
+    t.string "logradouro"
+    t.string "bairro"
+    t.string "localidade"
+    t.string "uf"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "vulnerable_zones", force: :cascade do |t|
     t.string "cep", null: false
