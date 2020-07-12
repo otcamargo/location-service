@@ -1,4 +1,4 @@
-class VulnerableZonesController < ApplicationController
+class ZipCodesController < ApplicationController
   def index
     vulnerable_zones = VulnerableZone.all
     render json: vulnerable_zones
