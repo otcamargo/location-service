@@ -35,11 +35,11 @@ The idea here is that we only store information about the vulnerable places in a
 
 ### Endpoints
 
-**Vulnerable zones:**
+**Zip codes:**
 
-To list all vulnerable zones, you need to send a `GET` request to `/vulnerable_zones`.
+To list all zip codes, you need to send a `GET` request to `/zip_codes`.
 
-To create a new vulnerable zone in the db, you need to send a `POST` request to `/vulnerable_zones` containing a payload like this:
+To create a new zip code in the db, you need to send a `POST` request to `/zip_codes` containing a payload like this:
 ```
 {
 	"cep": "03462120"
@@ -47,7 +47,7 @@ To create a new vulnerable zone in the db, you need to send a `POST` request to 
 ```
 The cep must be formatted this exact way, using only numbers.
 
-To delete a new vulnerable zone in the db, you need to send a `DELETE` request to `/vulnerable_zones` containing a payload like this:
+To delete a zip code from the db, you need to send a `DELETE` request to `/zip_codes` containing a payload like this:
 ```
 {
 	"cep": "03462120"
