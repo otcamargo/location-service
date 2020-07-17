@@ -1,10 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe "VulnerableZones", type: :request do
+RSpec.describe "ZipCodes", type: :request do
 
   describe "GET /index" do
     it "returns http success" do
-      get "/vulnerable_zones"
+      get "/zip_codes"
       expect(response).to have_http_status(:success)
     end
   end

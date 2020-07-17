@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  resources :vulnerable_zones
-  delete 'vulnerable_zones/', to: 'vulnerable_zones#destroy'
+  resources :zip_codes
+  delete 'zip_codes/', to: 'zip_codes#destroy'
 end
