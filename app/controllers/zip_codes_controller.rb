@@ -5,16 +5,16 @@ class ZipCodesController < ApplicationController
   end
 
   def create
-    zip_code = params[:cep]
+    zip_code = params[:zip_code]
     uri = "https://viacep.com.br/ws/#{zip_code}/json/"
     response = HTTParty.get(uri)
 
     zip_code_params = {
-      cep: response.parsed_response["cep"],
-      logradouro: response.parsed_response["logradouro"],
-      bairro: response.parsed_response["bairro"],
-      localidade: response.parsed_response["localidade"],
-      uf: response.parsed_response["uf"]
+      zip_code: response.parsed_response["cep"],
+      street: response.parsed_response["logradouro"],
+      neighborhood: response.parsed_response["bairro"],
+      city: response.parsed_response["localidade"],
+      state: response.parsed_response["uf"]
     }
 
     Location.create!(zip_code_params)
@@ -23,9 +23,9 @@ class ZipCodesController < ApplicationController
   end
 
   def destroy
-    zip_code = format_zip_code(params[:cep])
+    zip_code = format_zip_code(params[:zip_code])
   
-    @zip_code = Location.find_by!(cep: zip_code)
+    @zip_code = Location.find_by!(zip_code: zip_code)
     @zip_code.destroy!
 
     render head: :ok
