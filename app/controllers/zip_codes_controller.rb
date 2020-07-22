@@ -1,7 +1,7 @@
 class ZipCodesController < ApplicationController
   def index
-    vulnerable_zones = VulnerableZone.all
-    render json: vulnerable_zones
+    zip_codes = Location.all
+    render json: zip_codes
   end
 
   def create
@@ -9,7 +9,7 @@ class ZipCodesController < ApplicationController
     uri = "https://viacep.com.br/ws/#{zip_code}/json/"
     response = HTTParty.get(uri)
 
-    vulnerable_zone_params = {
+    zip_code_params = {
       cep: response.parsed_response["cep"],
       logradouro: response.parsed_response["logradouro"],
       bairro: response.parsed_response["bairro"],
@@ -17,7 +17,7 @@ class ZipCodesController < ApplicationController
       uf: response.parsed_response["uf"]
     }
 
-    VulnerableZone.create!(vulnerable_zone_params)
+    Location.create!(zip_code_params)
 
     render json: response
   end
@@ -25,8 +25,8 @@ class ZipCodesController < ApplicationController
   def destroy
     zip_code = format_zip_code(params[:cep])
   
-    @vulnerable_zone = VulnerableZone.find_by!(cep: zip_code)
-    @vulnerable_zone.destroy!
+    @zip_code = Location.find_by!(cep: zip_code)
+    @zip_code.destroy!
 
     render head: :ok
   end

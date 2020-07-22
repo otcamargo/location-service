@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-vulnerable_zone = VulnerableZone.create(
+vulnerable_zone = Location.create(
     cep: '01311-922',
     logradouro: 'Avenida Paulista 1195',
     bairro: 'Bela Vista',

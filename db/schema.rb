@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2020_04_15_212039) do
 
-  create_table "vulnerable_zones", force: :cascade do |t|
+  create_table "locations", force: :cascade do |t|
     t.string "cep", null: false
     t.string "logradouro", null: false
     t.string "bairro", null: false
