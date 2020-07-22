@@ -1,7 +1,7 @@
 location1:
   id: 1
-  cep: 01311-922
-  logradouro: Avenida Paulista 1195
-  bairro: Bela Vista
-  localidade: São Paulo
-  uf: SP
+  zip_code: 01311-922
+  street: Avenida Paulista 1195
+  neighborhood: Bela Vista
+  city: São Paulo
+  state: SP
