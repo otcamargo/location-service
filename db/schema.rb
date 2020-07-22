@@ -12,12 +12,12 @@
 
 ActiveRecord::Schema.define(version: 2020_04_15_212039) do
 
-  create_table "vulnerable_zones", force: :cascade do |t|
-    t.string "cep", null: false
-    t.string "logradouro", null: false
-    t.string "bairro", null: false
-    t.string "localidade", null: false
-    t.string "uf", null: false
+  create_table "locations", force: :cascade do |t|
+    t.string "zip_code", null: false
+    t.string "street", null: false
+    t.string "neighborhood", null: false
+    t.string "city", null: false
+    t.string "state", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
