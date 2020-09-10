@@ -10,7 +10,7 @@ class ZipCodesController < ApplicationController
     response = HTTParty.get(uri)
 
     zip_code_params = {
-      zip_code: response.parsed_response["cep"],
+      zip_code: format_zip_code(response.parsed_response["cep"]),
       street: response.parsed_response["logradouro"],
       neighborhood: response.parsed_response["bairro"],
       city: response.parsed_response["localidade"],
@@ -34,10 +34,6 @@ class ZipCodesController < ApplicationController
   private
 
   def format_zip_code(zip_code)
-    if zip_code.length == 8
-      return zip_code.insert(5, "-")
-    else
-      puts "Invalid"
-    end
+    return zip_code.remove("-")
   end
 end
