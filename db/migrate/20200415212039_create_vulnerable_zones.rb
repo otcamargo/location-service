@@ -1,6 +1,6 @@
 class CreateVulnerableZones < ActiveRecord::Migration[6.0]
   def change
-    create_table :vulnerable_zones do |t|
+    create_table :locations do |t|
       t.string :cep, null: false
       t.string :logradouro, null: false
       t.string :bairro, null: false
