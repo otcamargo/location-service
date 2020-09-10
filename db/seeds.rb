@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 location = Location.create(
-    zip_code: '01311-922',
+    zip_code: '01311922',
     street: 'Avenida Paulista 1195',
     neighborhood: 'Bela Vista',
     city: 'São Paulo',
