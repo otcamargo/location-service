@@ -25,8 +25,7 @@ class ZipCodesController < ApplicationController
   def destroy
     zip_code = format_zip_code(params[:zip_code])
   
-    @zip_code = Location.find_by!(zip_code: zip_code)
-    @zip_code.destroy!
+    @zip_code = Location.find_by!(zip_code: zip_code).destroy!
 
     render head: :ok
   end
