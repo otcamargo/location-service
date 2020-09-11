@@ -27,9 +27,9 @@ On the first run, it will create your test DB.
 
 ### DB structure
 
-This project's db has one table only called `vulnerable_zones`. This table is where we store data related to vulnerable zones (floods and other natural disasters).
+This project's db has one table only called `locations`. This table is where we store data related to added locations.
 
-The idea here is that we only store information about the vulnerable places in a way that we can retrieve it with ease. This is our schema
+The idea here is that we only store information about the locations in a way that we can retrieve it with ease. This is our schema
 
 ![Alt text](/docs/images/db-schema.png?raw=true "Title")
 
@@ -42,7 +42,7 @@ To list all zip codes, you need to send a `GET` request to `/zip_codes`.
 To create a new zip code in the db, you need to send a `POST` request to `/zip_codes` containing a payload like this:
 ```
 {
-	"cep": "03462120"
+	"zip_code": "03462120"
 }
 ```
 The cep must be formatted this exact way, using only numbers.
@@ -50,7 +50,7 @@ The cep must be formatted this exact way, using only numbers.
 To delete a zip code from the db, you need to send a `DELETE` request to `/zip_codes` containing a payload like this:
 ```
 {
-	"cep": "03462120"
+	"zip_code": "03462120"
 }
 ```
-The cep must be formatted this exact way, using only numbers.
+The zip_code must be formatted this exact way, using only numbers.
