@@ -18,6 +18,7 @@ gem 'puma', '~> 4.3'
 gem 'rspec-rails'
 gem 'httparty'
 gem 'webmock'
+gem 'prometheus-client'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
